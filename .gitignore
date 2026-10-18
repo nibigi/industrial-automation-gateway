@@ -1,0 +1,36 @@
+# C++ build outputs
+simulator/printer-simulator
+build/
+*.o
+*.so
+*.a
+
+# .NET
+**/bin/
+**/obj/
+
+# React / Node
+node_modules/
+dist/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*
+*secrets*
+
+# Private operational documents
+docs/private/
+*_PRIVATE.md
+RELEASE_WORKFLOW.md
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
