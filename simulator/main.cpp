@@ -2,6 +2,7 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #include <unistd.h>
+#include "printer_state.h"
 
 #include <cerrno>
 #include <cstring>
@@ -10,6 +11,7 @@
 
 int main() {
     constexpr int PORT = 5000;
+    PrinterStateMachine printer;
 
     int server = socket(AF_INET, SOCK_STREAM, 0);
     if (server < 0) {
@@ -58,10 +60,7 @@ int main() {
 
             std::cout << "Received: " << command << std::endl;
 
-            std::string response =
-                command == "STATUS"
-                    ? "STATE=IDLE\n"
-                    : "ERROR=UNKNOWN_COMMAND\n";
+            std::string response = printer.execute(command);
 
             send(client, response.c_str(), response.size(), 0);
         }

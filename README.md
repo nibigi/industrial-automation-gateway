@@ -7,9 +7,9 @@ This project explores TCP/IP device communication, protocol integration, state m
 
 ## Project Status
 
-**Version:** V0.1 — Initial Printer Simulator
+**Version:** V0.2 - Printer State Machine (development branch)
 
-The current implementation provides a minimal C++ TCP server that accepts a status command and returns a simulated printer state.
+V0.2 provides a localhost-only C++ TCP printer simulator with an in-memory state machine (IDLE, RUNNING, FAULT). It supports STATUS, START, STOP, FAULT and RESET commands, including invalid-state handling.
 
 The gateway, dashboard, and advanced printer behaviors are planned for future versions.
 
@@ -93,7 +93,7 @@ ERROR=UNKNOWN_COMMAND
 ## Development Roadmap
 
 - [x] V0.1 — Basic C++ TCP Printer Simulator
-- [ ] V0.2 — Printer state machine: IDLE / RUNNING / FAULT
+- [x] V0.2 — Printer state machine: IDLE / RUNNING / FAULT
 - [ ] V0.3 — Additional printer commands and responses
 - [ ] V0.4 — TCP message framing and improved error handling
 - [ ] V0.5 — C#/.NET Gateway API
